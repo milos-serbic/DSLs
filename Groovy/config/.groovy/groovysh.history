@@ -1,0 +1,91 @@
+exit
+quit
+:exit
+var dsl1 = imageDSLGroovy format:png, compression:61.pct importing from:"lanzarote.jpg" scale height:800.px exporting to:"lanzarote.png"
+Integer.metaClass.mixin IntegerCategory
+var dsl1 = imageDSLGroovy format:png, compression:61.pct importing from:"lanzarote.jpg" scale height:800.px exporting to:"lanzarote.png"
+:exit
+def dsl1 = imageDSLGroovy format:png, compression:61.pct importing from:"lanzarote.jpg" scale height:800.px exporting to:"lanzarote.png"
+    dsl1.processing {
+        importing from:"lanzarote.jpg"
+        scale height:400.px
+        filterWith FilterEnum.GlowFilter
+        exporting to:"lanzarote.png"
+    }
+def dsl1 = imageDSLGroovy format:png, compression:61.pct
+dsl1.processing {
+        importing from:"lanzarote.jpg"
+        scale height:400.px
+        filterWith FilterEnum.GlowFilter
+        exporting to:"lanzarote.png"
+    }
+def dsl1 = imageDSLGroovy format:png, compression:61.pct
+dsl1.processing { importing from:"lanzarote.jpg" scale height:400.px filterWith FilterEnum.GlowFilter exporting to:"lanzarote.png" }
+:exit
+dsl1 = imageDSLGroovy format:png, compression:61.pct
+dsl1.processing {
+    importing from:"lanzarote.jpg"
+    scale height:400.px
+    filterWith FilterEnum.GlowFilter
+    exporting to:"lanzarote.png"
+}
+dsl2 = imageDSLGroovy format:jpg, compression:48.pct importing from:"vossen.jpg" scale height:600.px, width:400.px
+dsl1.translate {
+    x = 15.px
+    y = 20.px
+    background color:white
+    exporting to:"lanzaroteTranslate.jpg"
+}
+dsl1.translate {
+    x = 15.px
+    y = 20.px
+    background color:black
+    exporting to:"lanzaroteTranslate.jpg"
+}
+    dsl1.translate {
+        x = 15.px
+        y = 20.px
+        background color:black
+        exporting to:"lanzaroteTranslate.jpg"
+    }
+dsl1.translate {
+    x = 15.px
+    y = 20.px
+    background color:black
+    exporting to:"lanzaroteTranslate2.jpg"
+}
+dsl2.translate {
+    x = 15.px
+    y = 20.px
+    background color:black
+    exporting to:"vossen.jpg"
+}
+dsl2.translate {
+    x = 15.px
+    y = 20.px
+    background color:white
+    exporting to:"vossen.jpg"
+}
+(dsl1 + dsl2).exporting to:"exportAlpha1.png"
+ dsl1.add {
+     imageForCompostion = dsl2
+     compositType = alpha
+     compositPct = 80.pct
+     adding
+     exporting to:"exportAlpha2.png"
+:clear
+dsl2.filterWith FilterEnum.PixelateFilter exporting to:"vossenExportFilter1.png"
+ dsl1.add {
+     imageForCompostion = dsl2
+     compositType = alpha
+     compositPct = 80.pct
+     adding
+     exporting to:"exportAlpha2.png"
+ }
+:exit
+/h
+:h
+:e
+exit
+/exit
+:exit

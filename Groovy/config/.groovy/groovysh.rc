@@ -1,0 +1,7 @@
+import com.sksamuel.scrimage.filter.*
+import utilitiesGroovy.DoubleCategory
+import utilitiesGroovy.IntegerCategory
+import static dslGroovy.ImageDSLGroovy.*
+import static utilitiesGroovy.UtilitiesGroovy.*
+Integer.metaClass.mixin IntegerCategory
+Double.metaClass.mixin DoubleCategory
